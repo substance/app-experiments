@@ -1,0 +1,24 @@
+{
+  "name": "app-experiments",
+  "version": "1.0.0",
+  "description": "We are introducing a better implementation for handling app states.\r Here we try out some patterns and use it to drive the development of the new API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/substance/app-experiments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/substance/app-experiments/issues"
+  },
+  "homepage": "https://github.com/substance/app-experiments#readme",
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "substance": "^1.0.0-preview.63",
+    "substance-bundler": "^0.24.3"
+  }
+}

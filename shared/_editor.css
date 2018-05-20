@@ -1,0 +1,97 @@
+.sc-editor {
+  height: 100%;
+  font-size: 17px;
+  font-family: Avenir, Helvetica;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.7em;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+
+.sc-editor .se-content {
+  max-width: 760px;
+  padding: 30px;
+}
+
+.sc-editor .se-toolbar-wrapper {
+  z-index: 1000;
+  padding: 3px;
+  padding-bottom: 4px;
+  box-shadow: 0 0 0 0.75pt #d1d1d1, 0 0 3pt 0.75pt #ccc;
+}
+
+/* Add padding to each child except last one */
+.sc-editor .sc-container-editor > * {
+  margin: 15px 0;
+}
+
+.sc-editor .sc-container-editor > .sc-p {
+  font-family: Georgia;
+}
+
+.sc-editor .sc-container-editor .sc-isolated-node {
+  margin: 30px 0;
+}
+
+.sc-editor .sc-container-editor .sc-isolated-node.sm-focused,
+.sc-editor .sc-container-editor .sc-isolated-node.sm-co-focused {
+  outline: 1px solid var(--local-selection-color);
+}
+
+.sc-editor > .se-context-pane {
+  flex: 0 2 300px;
+  background: #fafbfc;
+  border-left: 1px solid #e1e4e8;
+  position: relative;
+}
+
+.sc-editor .se-context-pane > .se-context-pane-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: auto;
+}
+
+.sc-editor > .se-main-section {
+  flex: 1 1 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sc-editor > .se-main-section > .se-toolbar-wrapper {
+  flex: 0 0 40px;
+}
+
+.sc-editor .se-main-section .sc-scroll-pane {
+  position: relative;
+}
+
+/* General editor styles */
+.sc-heading {
+  font-family: 'Avenir Next', 'Lato', Helvetica;
+  padding-top: 10px;
+}
+
+h1.sc-heading {
+  font-size: 20px;
+}
+
+h2.sc-heading {
+  font-size: 18px;
+}
+
+h3.sc-heading {
+  font-size: 16px;
+}
+
+.sc-context-menu .sc-tool-separator {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
