@@ -2,7 +2,7 @@ import { EditorSession, substanceGlobals, platform } from 'substance'
 import { Configurator } from 'substance-application'
 import SingleDocumentEditorPackage from './SingleDocumentEditorPackage'
 import SingleDocumentEditor from './SingleDocumentEditor'
-import { inheritComponentContextPatch } from '../legacy/index'
+// import { inheritComponentContextPatch } from '../legacy/index'
 
 const html = `<!DOCTYPE html>
 <html>
@@ -21,10 +21,10 @@ window.onload = () => {
   // enable some debugging when the console is open
   if (platform.devtools) {
     // better stack traces for Component.render()
-    substanceGlobals.DEBUG_RENDERING =
+    substanceGlobals.DEBUG_RENDERING = true
     // use inheritance instead of cloning Component contexts
     // this allows us to pass down a context which raises deprecation warnings
-    inheritComponentContextPatch()
+    // inheritComponentContextPatch()
   }
 
   // configuration

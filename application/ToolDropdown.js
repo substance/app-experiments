@@ -5,7 +5,7 @@ export default class ToolDropdown extends ToolGroup {
   constructor (...args) {
     super(...args)
 
-    this._deriveState()
+    this._deriveState(this.props)
   }
 
   willReceiveProps (newProps) {
@@ -14,8 +14,8 @@ export default class ToolDropdown extends ToolGroup {
   }
 
   _deriveState (props) {
-    const commandStates = this.props.commandStates
-    const items = this.props.items
+    const commandStates = props.commandStates
+    const items = props.items
     let activeCommandName
     let hasEnabledTools = false
     this._items = items.map(toolSpec => {

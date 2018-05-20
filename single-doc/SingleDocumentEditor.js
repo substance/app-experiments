@@ -1,6 +1,7 @@
 import {
   Component, SplitPane, ScrollPane, ContainerEditor
 } from 'substance'
+import { Managed } from 'substance-application'
 
 export default class SingleDocumentEditor extends Component {
   getChildContext () {
@@ -89,10 +90,11 @@ export default class SingleDocumentEditor extends Component {
     let configurator = this._getConfigurator()
     let toolPanelSepc = configurator.getToolPanel('toolbar')
     return $$('div').addClass('se-toolbar-wrapper').append(
-      $$(Toolbar, {
+      $$(Managed(Toolbar), {
         toolPanel: toolPanelSepc,
-        // TODO: here we would want to establish a binding to 'commandStates'
-        commandStates: this.props.editorSession.getCommandStates()
+        bindings: [
+          'commandStates'
+        ]
       }).ref('toolbar')
     )
   }
