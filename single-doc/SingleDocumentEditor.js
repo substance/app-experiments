@@ -4,6 +4,14 @@ import {
 import { Managed } from 'substance-application'
 
 export default class SingleDocumentEditor extends Component {
+  constructor(...args) {
+    super(...args)
+
+    this.handleActions({
+      'executeCommand': this._executeCommand
+    })
+  }
+
   getChildContext () {
     const configurator = this.props.configurator
     const editorSession = this.props.editorSession
@@ -122,5 +130,10 @@ export default class SingleDocumentEditor extends Component {
 
   _getDocument () {
     return this.props.document
+  }
+
+  // TODO rethink
+  _executeCommand (commandName, commandState, params) {
+    this.props.editorSession.commandManager.executeCommand(commandName, params)
   }
 }
