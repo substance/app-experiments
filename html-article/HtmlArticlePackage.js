@@ -1,5 +1,6 @@
 import { Document } from 'substance'
 import ParagraphPackage from './paragraph/ParagraphPackage'
+import HeadingPackage from './heading/HeadingPackage'
 import HtmlArticleImporter from './HtmlArticleImporter'
 
 export default {
@@ -16,5 +17,6 @@ export default {
     configurator.addImporter('html', HtmlArticleImporter)
 
     configurator.import(ParagraphPackage)
+    configurator.import(HeadingPackage)
   }
 }
