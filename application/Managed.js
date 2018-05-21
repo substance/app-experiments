@@ -41,10 +41,7 @@ export default function Managed (ComponentClass) {
     }
 
     render ($$) {
-      // TODO: allow forwarding to another component
-      return $$('div').append(
-        $$(ComponentClass, this._props).ref('managed')
-      )
+      return $$(ComponentClass, this._props).ref('managed')
     }
 
     _onChange (editorSession) {
