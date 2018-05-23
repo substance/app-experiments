@@ -2,9 +2,14 @@ import { Component } from 'substance'
 
 const _ManagedComponentCache = new Map()
 
-// Example:
-// $$(Managed(Toolbar), { foo: bar, bindings: ['commandState'] })
-// 'commandState' will be taken from the app-state scope, and automatically rerendered when this changes
+/*
+  Example:
+  ```
+  $$(Managed(Toolbar), { bindings: ['commandState'] })
+  ```
+  `commandStates` will be taken from the app-state, and merged with the other props.
+  When `commandStates` is changed, Toolbar automatically will be rerendered automatically via extendProps.
+*/
 export default function Managed (ComponentClass) {
   if (_ManagedComponentCache.has(ComponentClass)) return _ManagedComponentCache.get(ComponentClass)
 
